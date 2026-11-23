@@ -6,12 +6,12 @@ Four small React components for focused interfaces: `Button`, `TextField`, `Card
 
 ## Use locally
 
-From the repository root:
+From the Level 3 repository root:
 
 ```sh
-npm install
+npm ci
 npm run build:library
-npm pack ./level-3/component-library
+npm pack ./component-library
 # In a separate React app, use the actual generated tarball filename:
 npm install /absolute/path/to/tejaspant09-still-ui-0.1.0.tgz
 ```
@@ -112,11 +112,10 @@ Import the stylesheet once. All colors and font families are root custom propert
 ## Develop and inspect
 
 ```sh
-# Run from the repository root
-npm test -- tests/library.test.jsx
+# Run from the Level 3 repository root
+npm test
 npm run storybook
 npm run build:storybook
-npm run test:package
 ```
 
 Storybook includes all four components, variants, loading/disabled states, help/error states, and working interaction examples. Its a11y addon assists review; it does not replace keyboard and screen reader checks. Built documentation is served under `/library/`. The workspace root supplies build, Storybook and test dependencies; it is required to build this source checkout. Packed consumers only need React and the resulting package.
@@ -125,7 +124,7 @@ Storybook includes all four components, variants, loading/disabled states, help/
 
 1. Confirm npm account and organization ownership with `npm whoami` and the npm account/organization settings. Choose a scope you control; replace the unverified proposed scope throughout this package. Check name availability with `npm view @YOUR_SCOPE/still-ui` (a missing package does not prove scope ownership).
 2. Review the API, license, README, version, and packed file list. Run the tests, library build, Storybook build, and clean-consumer package smoke check above.
-3. In `level-3/component-library`, run `npm pack --dry-run` and inspect the artifact. Only `dist`, README and LICENSE are intended to ship, alongside npm's mandatory package metadata. Authenticate using `npm login` if required.
+3. From the Level 3 repository root, run `npm pack ./component-library --dry-run` and inspect the artifact. Only `dist`, README and LICENSE are intended to ship, alongside npm's mandatory package metadata. Authenticate using `npm login` if required.
 4. After explicit publication authorization, run `npm publish --access public`. Use a new version for subsequent releases. Verify the published version using `npm view @YOUR_SCOPE/still-ui version` and install it in a clean React app.
 
 The local package and tarball are deliverables; public npm availability remains pending until these steps are deliberately completed.
