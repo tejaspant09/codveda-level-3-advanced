@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A small interactive demo from the Still focus timer project."
+    />
+    <title>Still / set aside 25 minutes</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <nav class="container" aria-label="Main navigation">
+        <a class="brand" href="/landing/"
+          >Still<span aria-hidden="true">.</span></a
+        >
+        <div class="links">
+          <a href="/">Projects</a><a href="/landing/">Timer</a><a href="/library/">Components</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero container">
+        <div class="intro">
+          <h1>Set aside 25 minutes.</h1>
+          <p class="lead">
+            A quiet timer for focused work and intentional breaks.
+          </p>
+          <a href="#how">Explore the timer</a
+          ><button type="button" id="replay">Replay introduction</button>
+        </div>
+
+        <div class="timer" aria-label="Focus timer">
+          <div class="mode-row" aria-label="Timer mode">
+            <button type="button" data-mode="focus" aria-pressed="true">
+              Focus (25 min)</button
+            ><button type="button" data-mode="break" aria-pressed="false">
+              Break (5 min)
+            </button>
+          </div>
+          <p class="timer-label" id="timer-label">Focus session</p>
+          <output
+            id="time"
+            role="timer"
+            aria-live="off"
+            aria-labelledby="timer-label"
+            >25:00</output
+          >
+          <p id="timer-status" class="status" aria-live="polite">
+            Ready when you are.
+          </p>
+          <div class="button-row">
+            <button type="button" class="primary" id="toggle">
+              Start session</button
+            ><button type="button" id="reset">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="container section">
+        <div class="section-heading">
+          <h2>A simple rhythm for your day.</h2>
+          <p>
+            There is no complicated setup. Pick a task, settle in, and let the
+            timer hold the boundary.
+          </p>
+        </div>
+
+        <div class="features reveal">
+          <article>
+            <h3>Choose your interval</h3>
+            <p>
+              Start with 25 minutes of focus or switch to a five-minute break.
+            </p>
+          </article>
+
+          <article>
+            <h3>Keep the clock in view</h3>
+            <p>
+              Pause whenever you need to. Reset to begin the interval again.
+            </p>
+          </article>
+
+          <article>
+            <h3>Return with intention</h3>
+            <p>
+              Use the break to step away, then choose your next focus session.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section preview">
+        <div>
+          <h2>One session at a time.</h2>
+          <p class="lead">
+            A clear view of the time ahead, with the controls you need close by.
+          </p>
+        </div>
+
+        <figure>
+          <img
+            src="./assets/session-preview.webp"
+            alt="Still focus timer interface preview"
+            loading="lazy"
+            decoding="async"
+            width="1246"
+            height="950"
+          />
+          <figcaption>Still, in use.</figcaption>
+        </figure>
+      </section>
+
+      <section class="container section faq">
+        <h2>Good to know.</h2>
+        <div>
+          <details>
+            <summary>Can I pause a session?</summary>
+            <p>Yes. Pause and resume whenever you need to.</p>
+          </details>
+
+          <details>
+            <summary>What happens when the timer ends?</summary>
+            <p>
+              The clock stops at zero and the status changes to let you know the
+              interval is complete.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does this timer save my sessions?</summary>
+            <p>
+              No. This demo runs in your browser and does not save session
+              history.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Still is a little space to focus.</p>
+        <a href="/">All projects</a>
+      </div>
+    </footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

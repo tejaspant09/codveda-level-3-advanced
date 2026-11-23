@@ -1,0 +1,53 @@
+{
+  "name": "codveda-level-3-advanced",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "workspaces": [
+    "component-library"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5176 --strictPort",
+    "build": "vite build && vite build --config vite.baseline.config.js --mode baseline && npm run build:library && npm run build:storybook",
+    "build:library": "npm --prefix component-library run build",
+    "storybook": "storybook dev -p 6006 --config-dir component-library/.storybook",
+    "build:storybook": "storybook build --config-dir component-library/.storybook --output-dir dist/library",
+    "test": "vitest run",
+    "preview": "vite preview --host 127.0.0.1 --port 4176 --strictPort",
+    "audit:performance": "node scripts/performance.mjs"
+  },
+  "dependencies": {
+    "@fontsource/atkinson-hyperlegible-mono": "5.3.0",
+    "@fontsource/host-grotesk": "5.3.0",
+    "gsap": "3.15.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "8.0.0",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.13",
+    "@vitejs/plugin-react": "6.3.0",
+    "esbuild": "0.28.2",
+    "jsdom": "31.0.1",
+    "vite": "8.3.8",
+    "vitest": "5.1.1",
+    "storybook": "10.6.8",
+    "@storybook/addon-a11y": "10.6.8",
+    "@storybook/addon-docs": "10.6.8",
+    "@storybook/react-vite": "10.6.8",
+    "chrome-launcher": "1.2.3",
+    "lighthouse": "13.6.0"
+  },
+  "overrides": {
+    "@joshwooding/vite-plugin-react-docgen-typescript": {
+      "glob": "14.0.2"
+    },
+    "glob": {
+      "minimatch": "11.0.1"
+    }
+  }
+}

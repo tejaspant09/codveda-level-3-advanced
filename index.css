@@ -1,0 +1,17 @@
+@import "./shared/tokens.css";
+@import "./shared/base.css";
+body { min-height: 100vh; }
+header, footer { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--color-rule); }
+header a { font-weight: 600; text-decoration: none; }
+header span, footer { color: var(--color-muted); font-size: var(--text-sm); }
+main { width: min(1280px, calc(100% - 3rem)); margin: auto; padding-block: clamp(3rem, 9vw, 8rem); }
+.eyebrow, article span { color: var(--color-cool); font: var(--text-sm) var(--font-outlier); }
+h1 { margin-block: 1rem 1.5rem; font-size: clamp(2.5rem, 6vw, 5.5rem); }
+.intro { max-width: 54ch; color: var(--color-ink-2); font-size: var(--text-lead); }
+.projects { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--gap-columns); margin-top: clamp(3rem,8vw,7rem); }
+article { border-top: 1px solid var(--color-rule-2); padding-top: 1.2rem; }
+article h2 { margin-block: 1rem; font-size: var(--text-title); }
+article p { min-height: 4.7em; margin-bottom: 1.5rem; color: var(--color-ink-2); }
+article a { text-underline-offset: .2em; }
+footer { min-height: 72px; padding-inline: max(1.5rem, calc((100% - 1280px) / 2)); border-top: 1px solid var(--color-rule); border-bottom: 0; }
+@media (max-width: 48rem) { main { width: calc(100% - 2rem); } header { padding-inline: 1rem; } .projects { grid-template-columns: 1fr; gap: 2rem; } article p { min-height: 0; } }
