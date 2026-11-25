@@ -23,7 +23,7 @@ For Storybook development, run `npm run storybook` and open http://127.0.0.1:600
 
 ## Component package
 
-The library builds as an ESM package under `component-library/dist/`, with peer dependency React 18+. Its proposed npm scope `@tejaspant09/still-ui` has **not been verified as owned** and the package has **not been published**. The local package build and consumer check are distinct from npm publication.
+The library builds as an ESM package under `component-library/dist/`, with peer dependency React 18+. The package is named `@tejaspant/still-ui`. npm accepted publication of version 0.1.0 on 25 November 2026 and reported it was processing; registry availability and installation are pending verification.
 
 ## Performance results and limits
 

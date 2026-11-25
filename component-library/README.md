@@ -2,7 +2,7 @@
 
 Four small React components for focused interfaces: `Button`, `TextField`, `Card`, and `Alert`. JavaScript ES modules; React 18 or later is a peer dependency. The components use native elements, forward refs and native attributes, and include a standalone graphite theme.
 
-**Publication is pending.** `@tejaspant09/still-ui` is an unverified proposed npm scope, not evidence of account ownership or an existing public package. Choose a scope owned by the publisher and update `package.json` and the examples before real publication. No npm publication has been performed.
+Package name: `@tejaspant/still-ui`. The library provides four reusable React components with a standalone stylesheet.
 
 ## Use locally
 
@@ -13,12 +13,12 @@ npm ci
 npm run build:library
 npm pack ./component-library
 # In a separate React app, use the actual generated tarball filename:
-npm install /absolute/path/to/tejaspant09-still-ui-0.1.0.tgz
+npm install /absolute/path/to/tejaspant-still-ui-0.1.0.tgz
 ```
 
 ```jsx
-import { Button, TextField, Card, Alert } from '@tejaspant09/still-ui';
-import '@tejaspant09/still-ui/styles.css';
+import { Button, TextField, Card, Alert } from '@tejaspant/still-ui';
+import '@tejaspant/still-ui/styles.css';
 
 export function SessionForm() {
   return (
@@ -127,4 +127,4 @@ Storybook includes all four components, variants, loading/disabled states, help/
 3. From the Level 3 repository root, run `npm pack ./component-library --dry-run` and inspect the artifact. Only `dist`, README and LICENSE are intended to ship, alongside npm's mandatory package metadata. Authenticate using `npm login` if required.
 4. After explicit publication authorization, run `npm publish --access public`. Use a new version for subsequent releases. Verify the published version using `npm view @YOUR_SCOPE/still-ui version` and install it in a clean React app.
 
-The local package and tarball are deliverables; public npm availability remains pending until these steps are deliberately completed.
+Use the npm registry page to check available published versions.

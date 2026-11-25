@@ -1,5 +1,5 @@
 {
-  "name": "@tejaspant09/still-ui",
+  "name": "@tejaspant/still-ui",
   "version": "0.1.0",
   "description": "Small accessible React primitives for focused interfaces.",
   "type": "module",
