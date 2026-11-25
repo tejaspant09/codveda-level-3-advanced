@@ -39,3 +39,7 @@ Keep the React component library as the primary Level 3 Task 1 deliverable becau
 .\.venv\Scripts\python.exe manage.py check
 .\.venv\Scripts\python.exe manage.py test
 ~~~
+
+## Deployment preparation (in progress)
+
+PostgreSQL can be configured with DATABASE_URL and static files are served by WhiteNoise. Render build command: `bash build.sh`; start command: `gunicorn authdemo.wsgi:application`. Set DJANGO_DEBUG=0, DJANGO_SECRET_KEY, DJANGO_ALLOWED_HOSTS and DATABASE_URL through the host, never in Git. A live deployment is not ready until SMTP recovery, login abuse protections and hosted verification are completed.
