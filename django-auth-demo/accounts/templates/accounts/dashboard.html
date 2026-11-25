@@ -1,0 +1,14 @@
+{% extends "accounts/base.html" %}
+{% block title %}Your dashboard{% endblock %}
+{% block content %}
+  <section class="form-card dashboard-card">
+    <p class="eyebrow">02 / Protected route</p>
+    <h1>You’re signed in, {{ user.username }}.</h1>
+    <p class="lead">This page is available only to an authenticated session.</p>
+    <div class="session-note"><span class="status-dot" aria-hidden="true"></span><span>Session active in this browser</span></div>
+    <form method="post" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button class="button button-secondary" type="submit">Sign out safely</button>
+    </form>
+  </section>
+{% endblock %}

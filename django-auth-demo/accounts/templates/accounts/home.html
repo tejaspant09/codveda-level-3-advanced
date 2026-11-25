@@ -1,0 +1,23 @@
+{% extends "accounts/base.html" %}
+{% block title %}A safer way to sign in{% endblock %}
+{% block content %}
+  <section class="hero">
+    <p class="eyebrow">Django built-in authentication</p>
+    <h1>Small demo.<br />Real security habits.</h1>
+    <p class="lead">Create an account, sign in, and open a protected page. Django handles password hashing, sessions, and CSRF protection.</p>
+    <div class="actions">
+      {% if user.is_authenticated %}
+        <a class="button button-primary" href="{% url 'dashboard' %}">Open dashboard</a>
+      {% else %}
+        <a class="button button-primary" href="{% url 'signup' %}">Create demo account</a>
+        <a class="button button-secondary" href="{% url 'login' %}">Sign in</a>
+      {% endif %}
+    </div>
+    <p class="notice">This is a local learning demo. Do not enter a real password or use it for a production account.</p>
+  </section>
+  <section class="features" aria-label="Authentication features">
+    <article><span>01 / Sign-up</span><h2>Validated account creation</h2><p>Django’s user creation form checks password strength and stores a one-way hash.</p></article>
+    <article><span>02 / Sessions</span><h2>Protected dashboard</h2><p>Anonymous visitors are redirected to sign in. A server-side session is used after login.</p></article>
+    <article><span>03 / Recovery</span><h2>Reset flow included</h2><p>Use Django’s single-use password reset flow. In local mode, reset email appears in the run terminal.</p></article>
+  </section>
+{% endblock %}

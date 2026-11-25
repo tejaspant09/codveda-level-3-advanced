@@ -1,0 +1,23 @@
+{% extends "accounts/base.html" %}
+{% block title %}Create account{% endblock %}
+{% block content %}
+  <section class="form-card">
+    <p class="eyebrow">01 / New account</p>
+    <h1>Create a demo account</h1>
+    <p class="muted">Use a demo-only password. This app is for local practice.</p>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% if form.non_field_errors %}<div class="form-errors" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+      {% for field in form %}
+        <div class="field">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {% if field.help_text %}<p class="help">{{ field.help_text }}</p>{% endif %}
+          {% if field.errors %}<ul class="field-errors" role="alert">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</ul>{% endif %}
+        </div>
+      {% endfor %}
+      <button class="button button-primary button-wide" type="submit">Create account</button>
+    </form>
+    <p class="form-foot">Already registered? <a href="{% url 'login' %}">Sign in</a>.</p>
+  </section>
+{% endblock %}

@@ -31,7 +31,7 @@ See [`evidence/performance/REPORT.md`](evidence/performance/REPORT.md) and the r
 
 ## Codveda Task 1 interpretation
 
-This repository follows the task title and objectives for a component library with Storybook. The supplied PDF also contains a conflicting Django authentication description. Codveda has not confirmed which interpretation applies, so this repository does not claim company approval. Ask Codveda before final submission.
+This repository follows the task title and objectives for a component library with Storybook. The supplied PDF also contains a conflicting Django authentication description. A supplemental Django authentication demo is included in `django-auth-demo/` to cover the conflicting description. See its README for setup and limitations. Codveda has not confirmed which interpretation applies; ask before final submission.
 
 ## Originality
 

@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A small Django authentication learning demo." />
+    <link rel="icon" href="data:," />
+    <title>{% block title %}Still account demo{% endblock %} · Django auth</title>
+    <link rel="stylesheet" href="{% static 'accounts/auth.css' %}" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="{% url 'home' %}">Still<span>.</span> <small>Auth demo</small></a>
+      <nav aria-label="Main navigation">
+        {% if user.is_authenticated %}
+          <a href="{% url 'dashboard' %}">Dashboard</a>
+          <form method="post" action="{% url 'logout' %}" class="nav-form">
+            {% csrf_token %}
+            <button class="nav-button" type="submit">Sign out</button>
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}">Sign in</a>
+          <a class="nav-cta" href="{% url 'signup' %}">Create account</a>
+        {% endif %}
+      </nav>
+    </header>
+    <main id="main" class="page-shell">
+      {% if messages %}
+        <ul class="messages" aria-label="Notifications">
+          {% for message in messages %}<li class="{{ message.tags }}">{{ message }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <span>Level 3 · Django authentication interpretation</span>
+      <span>Learning demo · no production accounts</span>
+    </footer>
+  </body>
+</html>
